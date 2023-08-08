@@ -41,8 +41,8 @@ char *str_concat(char *s1, char *s2)
 
 		if (y >= w)
 		{
-			s[y] = s2[y];
-			y++;
+			s[y] = s2[x];
+			x++;
 		}
 
 		y++;
