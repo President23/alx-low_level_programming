@@ -9,7 +9,7 @@
 /**
  * error_exit - err exit
  * @message: message
- * exit_code: in
+ * @exit_code: in sh
  * Return: err
  */
 void error_exit(int exit_code, const char *message)
@@ -17,6 +17,13 @@ void error_exit(int exit_code, const char *message)
 	dprintf(STDERR_FILENO, "%s\n", message);
 	exit(exit_code);
 }
+
+/**
+ * main - in
+ * @argv: in
+ * @argc: in
+ * Return: change
+ */
 
 int main(int argc, char *argv[])
 {
