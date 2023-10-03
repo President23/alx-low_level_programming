@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -71,7 +72,7 @@ void print_class(unsigned char *e_ident)
 		printf("none\n");
 		break;
 	case ELFCLASS32:
-		prinff("ELF32\n");
+		printf("ELF32\n");
 		break;
 	case ELFCLASS64:
 		printf("ELF64\n");
@@ -136,7 +137,7 @@ void print_osabi(unsigned char *e_ident)
 	case ELFOSABI_NONE:
 		printf("UNIX - System v\n");
 		break;
-	case ELFOSABI_NPUX:
+	case ELFOSABI_HPUX:
 		printf("UNIX - HP-UX\n");
 		break;
 	case ELFOSABI_NETBSD:
@@ -177,7 +178,7 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		e_type >>= 8;
 
-	printf("   Type:         "):
+	printf("   Type:         ");
 
 	switch (e_type)
 	{
@@ -207,5 +208,5 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 void print_abi(unsigned char *e_ident)
 {
 	printf(" ABI version:       %d\n",
-			e_ident[EI_ABIVESRION]);
+			e_ident[EI_ABIVERSION]);
 }
